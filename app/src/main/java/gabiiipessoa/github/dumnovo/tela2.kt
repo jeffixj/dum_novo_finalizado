@@ -15,21 +15,22 @@ class tela2 : AppCompatActivity() {
     private lateinit var textViewResult: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela2)
-        buttonCalculate = findViewById(R.id.buttonCalculate)
-        editTextLastMenstruation = findViewById(R.id.editTextLastMenstruation)
-        textViewResult = findViewById(R.id.textViewResult)
+        setContentView(R.layout.activity_tela2) // Define o layout da atividade como "activity_tela2.xml"
+        buttonCalculate = findViewById(R.id.buttonCalculate) // Obtém a referência para o botão de calcular do layout
+        editTextLastMenstruation = findViewById(R.id.editTextLastMenstruation) // Obtém a referência para o campo de texto da última menstruação do layout
+        textViewResult = findViewById(R.id.textViewResult)// Obtém a referência para o campo de texto do resultado do layout
 
 
 
+        // Define um listener de clique para o botão de calcular
         buttonCalculate.setOnClickListener {
-            calculateExpectedDueDate()
+            calculateExpectedDueDate()  // Chama a função para calcular a data provável do parto
 
 
         }
     }
     private fun calculateExpectedDueDate() {
-        val lastMenstruation = editTextLastMenstruation.text.toString()
+        val lastMenstruation = editTextLastMenstruation.text.toString()  // Obtém a data da última menstruação do campo de texto
 
         // Converter a data de String para um objeto Date
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
